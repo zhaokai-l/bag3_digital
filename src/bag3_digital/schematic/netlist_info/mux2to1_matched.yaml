@@ -1,25 +1,10 @@
-# SPDX-License-Identifier: Apache-2.0
-# Copyright 2019 Blue Cheetah Analog Design Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 lib_name: bag3_digital
 cell_name: mux2to1_matched
 view_name: schematic
 bbox:
   - -636
-  - -140
-  - 540
+  - -105
+  - 518
   - 160
 terminals:
   VDD:
@@ -261,23 +246,191 @@ shapes:
     - 5
     - layer: 228
       purpose: 4294967295
+      net: VDD
+      points:
+        -
+          - 400
+          - 60
+        -
+          - 410
+          - 70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VDD
+      origin:
+        - 405
+        - 65
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: VSS
+      points:
+        -
+          - 400
+          - -100
+        -
+          - 410
+          - -90
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: VSS
+      origin:
+        - 405
+        - -95
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: outb
+      points:
+        -
+          - 300
+          - -20
+        -
+          - 310
+          - -10
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: outb
+      origin:
+        - 305
+        - -15
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: outb
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: out
+      points:
+        -
+          - 500
+          - -20
+        -
+          - 510
+          - -10
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: out
+      origin:
+        - 505
+        - -15
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: out
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: <*2>VDD
+      points:
+        -
+          - -240
+          - 60
+        -
+          - -230
+          - 70
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: <*2>VDD
+      origin:
+        - -235
+        - 65
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: <*2>VDD
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: <*2>VSS
+      points:
+        -
+          - -240
+          - -100
+        -
+          - -230
+          - -90
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: <*2>VSS
+      origin:
+        - -235
+        - -95
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: <*2>VSS
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
       net: sel,selb
       points:
         -
-          - -380
-          - -40
-        -
           - -340
           - -40
+        -
+          - -330
+          - -30
   -
     - 7
     - layer: 228
       purpose: 237
       net: sel,selb
       origin:
-        - -344
-        - -33
-      alignment: 8
+        - -335
+        - -35
+      alignment: 4
       orient: R0
       font: 5
       height: 10
@@ -292,20 +445,20 @@ shapes:
       net: selb,sel
       points:
         -
-          - -380
-          - 0
-        -
           - -340
           - 0
+        -
+          - -330
+          - 10
   -
     - 7
     - layer: 228
       purpose: 237
       net: selb,sel
       origin:
-        - -344
-        - 7
-      alignment: 8
+        - -335
+        - 5
+      alignment: 4
       orient: R0
       font: 5
       height: 10
@@ -317,79 +470,23 @@ shapes:
     - 5
     - layer: 228
       purpose: 4294967295
-      net: VSS
-      points:
-        -
-          - -240
-          - -140
-        -
-          - -240
-          - -100
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: VSS
-      origin:
-        - -247
-        - -104
-      alignment: 8
-      orient: R90
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: VSS
-  -
-    - 5
-    - layer: 228
-      purpose: 4294967295
-      net: VDD
-      points:
-        -
-          - -240
-          - 60
-        -
-          - -240
-          - 100
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: VDD
-      origin:
-        - -247
-        - 64
-      alignment: 2
-      orient: R90
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: VDD
-  -
-    - 5
-    - layer: 228
-      purpose: 4294967295
       net: in<1:0>
       points:
-        -
-          - -380
-          - -20
         -
           - -340
           - -20
+        -
+          - -330
+          - -10
   -
     - 7
     - layer: 228
       purpose: 237
       net: in<1:0>
       origin:
-        - -344
-        - -13
-      alignment: 8
+        - -335
+        - -15
+      alignment: 4
       orient: R0
       font: 5
       height: 10
@@ -401,95 +498,23 @@ shapes:
     - 5
     - layer: 228
       purpose: 4294967295
-      net: out
+      net: outb_s<1:0>
       points:
         -
-          - 500
-          - -20
-        -
-          - 540
-          - -20
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: out
-      origin:
-        - 504
-        - -13
-      alignment: 2
-      orient: R0
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: out
-  -
-    - 5
-    - layer: 228
-      purpose: 4294967295
-      net: VDD
-      points:
-        -
-          - 400
-          - 60
-        -
-          - 400
-          - 100
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: VDD
-      origin:
-        - 393
-        - 64
-      alignment: 2
-      orient: R90
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: VDD
-  -
-    - 5
-    - layer: 228
-      purpose: 4294967295
-      net: VSS
-      points:
-        -
-          - 400
           - -140
+          - -20
         -
-          - 400
-          - -100
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: VSS
-      origin:
-        - 393
-        - -104
-      alignment: 8
-      orient: R90
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: VSS
+          - -130
+          - -10
   -
     - 7
     - layer: 228
       purpose: 237
       net: outb_s<1:0>
       origin:
-        - -44
-        - -8
-      alignment: 8
+        - -135
+        - -15
+      alignment: 4
       orient: R0
       font: 5
       height: 10
@@ -498,37 +523,33 @@ shapes:
       drafting: true
       text: outb_s<1:0>
   -
-    - 6
+    - 5
     - layer: 228
       purpose: 4294967295
       net: outb_s<1:0>
-      width: 10
       points:
-        -
-          - -140
-          - -20
         -
           - -40
           - -20
-      style: 2
-      begin_ext: 0
-      end_ext: 0
+        -
+          - -30
+          - -10
   -
     - 7
     - layer: 228
       purpose: 237
-      net: outb
+      net: outb_s<1:0>
       origin:
-        - 254
-        - -13
-      alignment: 2
+        - -35
+        - -15
+      alignment: 4
       orient: R0
       font: 5
       height: 10
       overbar: false
       visible: true
       drafting: true
-      text: outb
+      text: outb_s<1:0>
   -
     - 5
     - layer: 228
@@ -539,8 +560,24 @@ shapes:
           - 240
           - -20
         -
-          - 300
-          - -20
+          - 250
+          - -10
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: outb
+      origin:
+        - 245
+        - -15
+      alignment: 4
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: outb
 instances:
   XBUF:
     lib_name: bag3_digital
@@ -608,22 +645,22 @@ instances:
 props:
   connectivityLastUpdated:
     - 0
-    - 16301
+    - 2400
   instance#:
     - 0
     - 2
   lastSchematicExtraction:
     - 4
-    - time_val: 1571163008
+    - time_val: 1603410982
   net#:
     - 0
-    - 0
+    - 2
   pin#:
     - 0
-    - 6
+    - 12
   schGeometryLastUpdated:
     - 0
-    - 16301
+    - 2400
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -633,10 +670,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 16301
+    - 2400
   _dbvCvTimeStamp:
     - 0
-    - 16301
+    - 2400
   cdbRevision:
     - 0
     - 227612
