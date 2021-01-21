@@ -368,27 +368,27 @@ props:
     - X
   interfaceLastChanged:
     - 4
-    - time_val: 1561387772
+    - time_val: 1605675626
   partName:
     - 3
     - inv_tristate
   pin#:
     - 0
-    - 6
+    - 7
   portOrder:
     - 5
     - name: ILList
-      bin_val: ("en" "enb" "in" "out" "VDD" "VSS")
+      bin_val: ("out" "VDD" "VSS" "en" "enb" "in")
   vendorName:
     - 3
     - ""
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 227
+    - 117
   _dbvCvTimeStamp:
     - 0
-    - 227
+    - 117
   cdbRevision:
     - 0
     - 227612

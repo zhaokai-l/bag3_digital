@@ -41,30 +41,53 @@ class bag3_digital__oai(Module):
 
     @classmethod
     def get_params_info(cls) -> Dict[str, str]:
-        """Returns a dictionary from parameter names to descriptions.
-
-        Returns
-        -------
-        param_info : Optional[Dict[str, str]]
-            dictionary from parameter names to descriptions.
-        """
         return dict(
+            lch='channel length',
+            w_p='pmos width.',
+            w_n='nmos width.',
+            th_p='pmos threshold flavor.',
+            th_n='nmos threshold flavor.',
+            seg='segments of transistors',
+            seg_pstack0='segments of stack input <3:2>',
+            seg_pstack1='segments of stack input <1:0>',
+            seg_n0='segments of nmos input <3:2>',
+            seg_n1='segments of nmos input <1:0>',
         )
 
-    def design(self) -> None:
-        """To be overridden by subclasses to design this module.
+    @classmethod
+    def get_default_param_values(cls) -> Dict[str, Any]:
+        return dict(
+            seg=-1,
+            seg_pstack0=-1,
+            seg_pstack1=-1,
+            seg_n0=-1,
+            seg_n1=-1,
+        )
 
-        This method should fill in values for all parameters in
-        self.parameters.  To design instances of this module, you can
-        call their design() method or any other ways you coded.
+    def design(self, seg: int, seg_pstack0: int, seg_pstack1: int, seg_n0: int, seg_n1: int,
+               lch: int, w_p: int, w_n: int, th_p: str, th_n: str) -> None:
+        if seg_pstack0 <= 0:
+            seg_pstack0 = seg
+        if seg_pstack1 <= 0:
+            seg_pstack1 = seg
+        if seg_n0 <= 0:
+            seg_n0 = seg
+        if seg_n1 <= 0:
+            seg_n1 = seg
 
-        To modify schematic structure, call:
+        pmos_inst_term_list = [('XP0', [('s', 'VDD'), ('b', 'VDD'), ('g<1:0>', 'in<1:0>'), ('d', 'out')]),
+                               ('XP1', [('s', 'VDD'), ('b', 'VDD'), ('g<1:0>', 'in<3:2>'), ('d', 'out')])]
+        self.array_instance('XP', inst_term_list=pmos_inst_term_list)
+        self.instances['XP0'].design(w=w_n, lch=lch, seg=seg_pstack0, intent=th_n, stack=2)
+        self.instances['XP1'].design(w=w_n, lch=lch, seg=seg_pstack1, intent=th_n, stack=2)
 
-        rename_pin()
-        delete_instance()
-        replace_instance_master()
-        reconnect_instance_terminal()
-        restore_instance()
-        array_instance()
-        """
-        pass
+        nmos_inst_term_list = [('XN0', [('S', 'nmid'), ('B', 'VSS'), ('G', 'in<3>'), ('D', 'out')]),
+                               ('XN1', [('S', 'nmid'), ('B', 'VSS'), ('G', 'in<2>'), ('D', 'out')]),
+                               ('XN2', [('S', 'VSS'), ('B', 'VSS'), ('G', 'in<1>'), ('D', 'nmid')]),
+                               ('XN3', [('S', 'VSS'), ('B', 'VSS'), ('G', 'in<0>'), ('D', 'nmid')])]
+        self.array_instance('XN', inst_term_list=nmos_inst_term_list)
+        [self.instances[inst].design(w=w_n, l=lch, nf=seg_n0, intent=th_n) for inst in ['XN0', 'XN1']]
+        [self.instances[inst].design(w=w_n, l=lch, nf=seg_n1, intent=th_n) for inst in ['XN2', 'XN3']]
+
+
+

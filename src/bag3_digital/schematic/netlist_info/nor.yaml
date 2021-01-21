@@ -389,7 +389,7 @@ shapes:
       drafting: true
       text: VDD
 instances:
-  XN<1:0>:
+  XN:
     lib_name: xbase
     cell_name: nmos4_stack
     view_name: symbol
@@ -403,10 +403,10 @@ instances:
       - -2
       - -69
     connections:
-      b: <*2>VSS
-      d: <*2>out
-      g<1:0>: in<1>,in<0>,in<1>,in<0>
-      s: <*2>VSS
+      b: VSS
+      d: out
+      g<1:0>: in<1>,in<0>
+      s: VSS
     params:
       {}
     is_primitive: false
@@ -434,19 +434,19 @@ instances:
 props:
   connectivityLastUpdated:
     - 0
-    - 829
+    - 1107
   lastSchematicExtraction:
     - 4
-    - time_val: 1603410217
+    - time_val: 1603414139
   net#:
     - 0
-    - 0
+    - 3
   pin#:
     - 0
     - 9
   schGeometryLastUpdated:
     - 0
-    - 829
+    - 1107
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -456,10 +456,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 829
+    - 1107
   _dbvCvTimeStamp:
     - 0
-    - 829
+    - 1107
   cdbRevision:
     - 0
     - 227612

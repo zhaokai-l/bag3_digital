@@ -316,7 +316,7 @@ shapes:
       drafting: true
       text: outb
 instances:
-  XINV0:
+  XINV:
     lib_name: bag3_digital
     cell_name: inv
     view_name: symbol
@@ -340,13 +340,13 @@ instances:
 props:
   connectivityLastUpdated:
     - 0
-    - 1383
+    - 1517
   instance#:
     - 0
     - 1
   lastSchematicExtraction:
     - 4
-    - time_val: 1603410757
+    - time_val: 1603427049
   net#:
     - 0
     - 0
@@ -355,7 +355,7 @@ props:
     - 16
   schGeometryLastUpdated:
     - 0
-    - 1383
+    - 1517
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -365,10 +365,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 1383
+    - 1517
   _dbvCvTimeStamp:
     - 0
-    - 1383
+    - 1517
   cdbRevision:
     - 0
     - 227612

@@ -3,9 +3,9 @@ cell_name: oai
 view_name: schematic
 bbox:
   - -691
-  - -310
+  - -234
   - 28
-  - 290
+  - 294
 terminals:
   VDD:
     obj:
@@ -284,50 +284,22 @@ shapes:
     - 5
     - layer: 228
       purpose: 4294967295
-      net: s
+      net: S
       points:
         -
           - -170
-          - -70
+          - -230
         -
           - -170
-          - -30
+          - -190
   -
     - 7
     - layer: 228
       purpose: 237
-      net: s
+      net: S
       origin:
         - -177
-        - -66
-      alignment: 2
-      orient: R90
-      font: 5
-      height: 10
-      overbar: false
-      visible: true
-      drafting: true
-      text: s
-  -
-    - 5
-    - layer: 228
-      purpose: 4294967295
-      net: d
-      points:
-        -
-          - -170
-          - -310
-        -
-          - -170
-          - -270
-  -
-    - 7
-    - layer: 228
-      purpose: 237
-      net: d
-      origin:
-        - -177
-        - -274
+        - -194
       alignment: 8
       orient: R90
       font: 5
@@ -335,59 +307,55 @@ shapes:
       overbar: false
       visible: true
       drafting: true
-      text: d
+      text: S
   -
     - 5
     - layer: 228
       purpose: 4294967295
-      net: b
+      net: D
       points:
         -
+          - -170
+          - -130
+        -
+          - -170
           - -90
-          - -170
-        -
-          - -50
-          - -170
   -
     - 7
     - layer: 228
       purpose: 237
-      net: b
+      net: D
       origin:
-        - -86
-        - -163
+        - -177
+        - -126
       alignment: 2
-      orient: R0
+      orient: R90
       font: 5
       height: 10
       overbar: false
       visible: true
       drafting: true
-      text: b
+      text: D
   -
-    - 6
+    - 5
     - layer: 228
       purpose: 4294967295
-      net: g<1:0>
-      width: 10
+      net: G
       points:
         -
-          - -330
-          - -170
+          - -250
+          - -160
         -
-          - -290
-          - -170
-      style: 2
-      begin_ext: 0
-      end_ext: 0
+          - -210
+          - -160
   -
     - 7
     - layer: 228
       purpose: 237
-      net: g<1:0>
+      net: G
       origin:
-        - -294
-        - -158
+        - -214
+        - -153
       alignment: 8
       orient: R0
       font: 5
@@ -395,29 +363,65 @@ shapes:
       overbar: false
       visible: true
       drafting: true
-      text: g<1:0>
+      text: G
+  -
+    - 5
+    - layer: 228
+      purpose: 4294967295
+      net: B
+      points:
+        -
+          - -170
+          - -160
+        -
+          - -130
+          - -160
+  -
+    - 7
+    - layer: 228
+      purpose: 237
+      net: B
+      origin:
+        - -166
+        - -153
+      alignment: 2
+      orient: R0
+      font: 5
+      height: 10
+      overbar: false
+      visible: true
+      drafting: true
+      text: B
 instances:
   XN:
-    lib_name: xbase
-    cell_name: pmos4_stack
+    lib_name: BAG_prim
+    cell_name: nmos4_fast
     view_name: symbol
     xform:
-      - -290
-      - -270
+      - -210
+      - -160
       - R0
     bbox:
-      - -294
-      - -274
-      - 28
-      - -59
+      - -278
+      - -194
+      - -78
+      - -115
     connections:
-      b: b
-      d: d
-      g<1:0>: g<1:0>
-      s: s
+      B: B
+      D: D
+      G: G
+      S: S
     params:
-      {}
-    is_primitive: false
+      l:
+        - 3
+        - 40n
+      nf:
+        - 3
+        - 1
+      w:
+        - 3
+        - 4
+    is_primitive: true
   XP:
     lib_name: xbase
     cell_name: pmos4_stack
@@ -442,13 +446,13 @@ instances:
 props:
   connectivityLastUpdated:
     - 0
-    - 1074
+    - 1770
   instance#:
     - 0
     - 2
   lastSchematicExtraction:
     - 4
-    - time_val: 1603235928
+    - time_val: 1603417164
   net#:
     - 0
     - 0
@@ -457,7 +461,7 @@ props:
     - 4
   schGeometryLastUpdated:
     - 0
-    - 1080
+    - 1770
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -467,10 +471,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 1080
+    - 1770
   _dbvCvTimeStamp:
     - 0
-    - 1080
+    - 1770
   cdbRevision:
     - 0
     - 227612

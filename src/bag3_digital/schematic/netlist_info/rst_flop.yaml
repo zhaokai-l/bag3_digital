@@ -4,7 +4,7 @@ view_name: schematic
 bbox:
   - -411
   - -305
-  - 388
+  - 400
   - 191
 terminals:
   VDD:
@@ -916,6 +916,24 @@ instances:
     params:
       {}
     is_primitive: false
+  XNC:
+    lib_name: basic
+    cell_name: noConn
+    view_name: symbol
+    xform:
+      - 390
+      - 70
+      - R0
+    bbox:
+      - 380
+      - 20
+      - 400
+      - 74
+    connections:
+      noConn: net1
+    params:
+      {}
+    is_primitive: true
   XS:
     lib_name: bag3_digital
     cell_name: rst_latch
@@ -962,19 +980,22 @@ instances:
 props:
   connectivityLastUpdated:
     - 0
-    - 1065
+    - 1426
+  instance#:
+    - 0
+    - 1
   lastSchematicExtraction:
     - 4
-    - time_val: 1603410414
+    - time_val: 1603416028
   net#:
     - 0
-    - 0
+    - 1
   pin#:
     - 0
     - 14
   schGeometryLastUpdated:
     - 0
-    - 1065
+    - 1426
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -984,10 +1005,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 1065
+    - 1426
   _dbvCvTimeStamp:
     - 0
-    - 1065
+    - 1426
   cdbRevision:
     - 0
     - 227612

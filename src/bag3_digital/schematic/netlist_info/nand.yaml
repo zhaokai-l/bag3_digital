@@ -410,7 +410,7 @@ instances:
     params:
       {}
     is_primitive: false
-  XP<1:0>:
+  XP:
     lib_name: xbase
     cell_name: pmos4_stack
     view_name: symbol
@@ -424,29 +424,29 @@ instances:
       - 238
       - 401
     connections:
-      b: <*2>VDD
-      d: <*2>out
-      g<1:0>: in<1>,in<0>,in<1>,in<0>
-      s: <*2>VDD
+      b: VDD
+      d: out
+      g<1:0>: in<1>,in<0>
+      s: VDD
     params:
       {}
     is_primitive: false
 props:
   connectivityLastUpdated:
     - 0
-    - 829
+    - 1316
   lastSchematicExtraction:
     - 4
-    - time_val: 1603410827
+    - time_val: 1603414598
   net#:
     - 0
-    - 0
+    - 3
   pin#:
     - 0
     - 9
   schGeometryLastUpdated:
     - 0
-    - 829
+    - 1316
   schGeometryVersion:
     - 3
     - sch.ds.gm.1.4
@@ -456,10 +456,10 @@ props:
 app_defs:
   _dbLastSavedCounter:
     - 0
-    - 829
+    - 1316
   _dbvCvTimeStamp:
     - 0
-    - 829
+    - 1316
   cdbRevision:
     - 0
     - 227612

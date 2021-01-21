@@ -671,7 +671,7 @@ class InvTristateCore(MOSBase):
         pports = self.add_nand2(ridx_p, 0, seg_p, w=w_p, stack=stack_p)
 
         # get track information
-        tr_manager = pinfo.tr_manager
+        tr_manager = self.tr_manager
         tr_w_h = tr_manager.get_width(hm_layer, 'sig')
         if sig_locs is None:
             sig_locs = {}
@@ -1761,7 +1761,7 @@ class PassGateCore(MOSBase):
 
         hm_layer = self.conn_layer + 1
         vm_layer = hm_layer + 1
-        if vertical_out and pinfo.top_layer < vm_layer:
+        if vertical_out and self.top_layer < vm_layer:
             raise ValueError(f'MOSBasePlaceInfo top layer must be at least {vm_layer}')
 
         pports = self.add_mos(ridx_p, 0, seg_p, w=w_p)

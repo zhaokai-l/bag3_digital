@@ -106,10 +106,12 @@ class LatchCore(MOSBase):
 
     def draw_layout(self) -> None:
         pinfo = MOSBasePlaceInfo.make_place_info(self.grid, self.params['pinfo'])
+        # setup floorplan
+        self.draw_base(pinfo)
 
-        hm_layer = pinfo.conn_layer + 1
+        hm_layer = self.conn_layer + 1
         vm_layer = hm_layer + 1
-        if pinfo.top_layer < vm_layer:
+        if self.top_layer < vm_layer:
             raise ValueError(f'MOSBasePlaceInfo top layer must be at least {vm_layer}')
 
         seg: int = self.params['seg']
@@ -121,11 +123,8 @@ class LatchCore(MOSBase):
         fanout_in: float = self.params['fanout_in']
         fanout_kp: float = self.params['fanout_kp']
 
-        # setup floorplan
-        self.draw_base(pinfo)
-
         # compute track locations
-        tr_manager = pinfo.tr_manager
+        tr_manager = self.tr_manager
         tr_w_v = tr_manager.get_width(vm_layer, 'sig')
         if sig_locs is None:
             sig_locs = {}
@@ -197,7 +196,7 @@ class LatchCore(MOSBase):
 
         # connect middle node
         col = inv_col - max(1, blk_sp // 2)
-        mid_tid = TrackID(vm_layer, pinfo.get_source_track(col), width=tr_w_v)
+        mid_tid = TrackID(vm_layer, self.arr_info.get_source_track(col), width=tr_w_v)
         warrs = [t0.get_pin('pout'), t0.get_pin('nout'), t1.get_pin('pout'), t1.get_pin('nout'),
                  inv.get_pin('nin')]
         self.connect_to_tracks(warrs, mid_tid)
@@ -206,8 +205,8 @@ class LatchCore(MOSBase):
         self.add_pin('poutb', inv.get_pin('nin'), hide=True)
 
         # connect clocks
-        clk_tidx = sig_locs.get('clk', pinfo.get_source_track(t1_col + 1))
-        clkb_tidx = sig_locs.get('clkb', pinfo.get_source_track(t1_col - blk_sp - 1))
+        clk_tidx = sig_locs.get('clk', self.arr_info.get_source_track(t1_col + 1))
+        clkb_tidx = sig_locs.get('clkb', self.arr_info.get_source_track(t1_col - blk_sp - 1))
         clk_tid = TrackID(vm_layer, clk_tidx, width=tr_w_v)
         clkb_tid = TrackID(vm_layer, clkb_tidx, width=tr_w_v)
         t0_en = t0.get_pin('en')
